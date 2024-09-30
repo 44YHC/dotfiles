@@ -1,8 +1,5 @@
 alias ls="eza --icons=always"
-alias code='cd ~/code'
-alias garage='cd ~/code/garage-be/'
-alias .config='cd ~/.config'
-alias .nvim='cd ~/.config/nvim'
+alias cd="z"
 alias .ssh='cd ~/.ssh' 
 alias .zsh='nvim ~/.zshrc'
 alias nv='nvim'
@@ -42,3 +39,5 @@ compinit
 
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
+eval "$(zoxide init zsh)"
