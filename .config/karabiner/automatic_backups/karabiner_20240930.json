@@ -4,7 +4,8 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Double-tap right_option to send Ctrl+Shift+Command+Semicolon, single press as normal",
+                        "description": "New Rule (change left_shift+caps_lock to page_down, right_shift+caps_lock to left_command+mission_control)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -14,21 +15,13 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "semicolon",
-                                        "modifiers": ["control", "shift", "command"]
-                                    }
-                                ],
+                                "from": { "key_code": "right_option" },
+                                "to": [{ "key_code": "right_option" }],
                                 "type": "basic"
                             },
                             {
                                 "from": { "key_code": "right_option" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 250 },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 100 },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -44,8 +37,7 @@
                                                 "name": "double-right-option",
                                                 "value": 0
                                             }
-                                        },
-                                        { "key_code": "right_option" }
+                                        }
                                     ],
                                     "to_if_invoked": [
                                         {
@@ -61,19 +53,20 @@
                         ]
                     },
                     {
-                        "description": "Use right_command as Ctrl+Shift+Command",
+                        "description": "Use right_option as Ctrl+Shift+Alt when pressed with other keys, and as right_command when pressed alone",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_command",
+                                    "key_code": "right_option",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_control",
-                                        "modifiers": ["left_shift", "right_command"]
+                                        "modifiers": ["left_shift", "left_option"]
                                     }
                                 ],
+                                "to_if_alone": [{ "key_code": "right_command" }],
                                 "type": "basic"
                             }
                         ]
