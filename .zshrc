@@ -8,10 +8,6 @@ alias nb='npm run build'
 alias ns='npm run start'
 alias nd='npm run dev'
 alias nl='npm run local'
-alias downloads='cd ~/Downloads/'
-alias documents='cd ~/Documents/'
-alias cluster='cd ~/code/garage-cluster/'
-alias chart='cd ~/code/garage-chart/'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -41,3 +37,4 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 eval "$(zoxide init zsh)"
+export PATH=$PATH:$(go env GOPATH)/bin
