@@ -102,8 +102,8 @@ ctrl-shift-cmd-alt-d = 'move up'
 ctrl-shift-cmd-alt-f = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-ctrl-cmd-shift-1 = 'resize smart -50'
-ctrl-cmd-shift-2 = 'resize smart +50'
+ctrl-cmd-shift-2 = 'resize smart -50'
+ctrl-cmd-shift-1 = 'resize smart +50'
 
 ctrl-shift-cmd-c = 'fullscreen'
 
@@ -212,4 +212,18 @@ run = ['layout tiling', 'move-node-to-workspace Q']
 [[on-window-detected]]
 if.app-id = 'org.videolan.vlc'
 run = ['layout tiling', 'move-node-to-workspace Q']
-
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['layout tiling', 'move-node-to-workspace B']
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['layout tiling', 'move-node-to-workspace M']
+[[on-window-detected]]
+if.app-id = 'com.tdesktop.Telegram'
+run = ['layout tiling', 'move-node-to-workspace M']
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = ['layout tiling', 'move-node-to-workspace V']
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = ['layout tiling', 'move-node-to-workspace N']
